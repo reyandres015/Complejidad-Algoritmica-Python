@@ -2,6 +2,8 @@ import random, time
 
 def busqueda_binaria(lista, comienzo, final, objetivo):
     while(True):
+        print(f'buscando {objetivo} entre {lista[comienzo]} y {lista[final]}')
+        
         if comienzo >= final:
             return False
         medio = int((comienzo + final)/2)
@@ -22,8 +24,8 @@ if __name__ == '__main__':
     objetivo = int(input('Ingrese el numero a buscar: '))
     
     comienzo = time.time()
-    encontrado = busqueda_binaria(lista, 0, len(lista),objetivo)
-    print(f'El elemento {objetivo} {"esta" if encontrado else "no esta"} en la lista en la posicion {encontrado}')
+    index = busqueda_binaria(lista, 0, len(lista),objetivo)
+    print(f'El elemento {objetivo} {"esta" if index else "no esta"} en la lista en la posicion {index}')
     final = time.time()
     
     print(f'Tiempo de ejecucion: {final-comienzo}')
